@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================================================
+   THEME CONFIGURATION — the single place to change colors.
+   Each theme defines the same set of variables for light and dark mode.
+   Add a new theme by copying a block, renaming data-theme, and adding
+   it to THEMES in src/components/ThemeProvider.tsx.
+   ===================================================================== */
+
+:root {
+  --radius: 16px;
+  --shadow-card: 0 1px 2px rgba(15, 15, 35, 0.05), 0 8px 24px -16px rgba(15, 15, 35, 0.18);
+  --shadow-lift: 0 24px 48px -24px rgba(15, 15, 35, 0.30);
+}
+
+/* ---------- 1. Royal Purple (default) — Innovative leadership ---------- */
+html[data-theme="royal-purple"] {
+  --c-primary: #312E81; --c-on-primary: #FFFFFF; --c-primary-soft: #EEEDFB;
+  --c-accent: #A855F7;
+  --c-bg: #FAFAFC; --c-surface: #FFFFFF;
+  --c-text: #191831; --c-muted: #5D5B7A; --c-border: #E4E3EF;
+}
+html.dark[data-theme="royal-purple"] {
+  --c-primary: #818CF8; --c-on-primary: #14122B; --c-primary-soft: #232047;
+  --c-accent: #C084FC;
+  --c-bg: #0E0D1C; --c-surface: #16152A;
+  --c-text: #EAE9F5; --c-muted: #9C9AC0; --c-border: #2A2848;
+}
+
+/* ---------- 2. Executive Navy — Boardroom classic ---------- */
+html[data-theme="executive-navy"] {
+  --c-primary: #1E3A8A; --c-on-primary: #FFFFFF; --c-primary-soft: #E8EEFB;
+  --c-accent: #0EA5E9;
+  --c-bg: #F8FAFC; --c-surface: #FFFFFF;
+  --c-text: #0F172A; --c-muted: #56637A; --c-border: #E2E8F0;
+}
+html.dark[data-theme="executive-navy"] {
+  --c-primary: #7DA6F8; --c-on-primary: #0B1226; --c-primary-soft: #1B2A4A;
+  --c-accent: #38BDF8;
+  --c-bg: #0A1020; --c-surface: #111A30;
+  --c-text: #E8EEF9; --c-muted: #94A5C4; --c-border: #223050;
+}
+
+/* ---------- 3. Emerald Professional — Trust & growth ---------- */
+html[data-theme="emerald-professional"] {
+  --c-primary: #065F46; --c-on-primary: #FFFFFF; --c-primary-soft: #E4F3EC;
+  --c-accent: #10B981;
+  --c-bg: #F8FBF9; --c-surface: #FFFFFF;
+  --c-text: #122420; --c-muted: #52685F; --c-border: #DDE9E2;
+}
+html.dark[data-theme="emerald-professional"] {
+  --c-primary: #5EEAD4; --c-on-primary: #071B16; --c-primary-soft: #12332B;
+  --c-accent: #34D399;
+  --c-bg: #081511; --c-surface: #0F211B;
+  --c-text: #E6F3EE; --c-muted: #8FAEA3; --c-border: #1D3A31;
+}
+
+/* ---------- 4. Midnight Cyber — Security-forward ---------- */
+html[data-theme="midnight-cyber"] {
+  --c-primary: #0F172A; --c-on-primary: #E2F5FF; --c-primary-soft: #E4EEF5;
+  --c-accent: #06B6D4;
+  --c-bg: #F4F7F9; --c-surface: #FFFFFF;
+  --c-text: #10151F; --c-muted: #566270; --c-border: #DFE6EC;
+}
+html.dark[data-theme="midnight-cyber"] {
+  --c-primary: #22D3EE; --c-on-primary: #04141A; --c-primary-soft: #0C2530;
+  --c-accent: #67E8F9;
+  --c-bg: #05090F; --c-surface: #0B1119;
+  --c-text: #DDEAF2; --c-muted: #7E93A6; --c-border: #182430;
+}
+
+/* ---------- 5. Modern Slate — Understated authority ---------- */
+html[data-theme="modern-slate"] {
+  --c-primary: #334155; --c-on-primary: #FFFFFF; --c-primary-soft: #EBEEF3;
+  --c-accent: #F59E0B;
+  --c-bg: #F9FAFB; --c-surface: #FFFFFF;
+  --c-text: #1B2430; --c-muted: #5B6673; --c-border: #E4E8ED;
+}
+html.dark[data-theme="modern-slate"] {
+  --c-primary: #CBD5E1; --c-on-primary: #0F141B; --c-primary-soft: #232B36;
+  --c-accent: #FBBF24;
+  --c-bg: #0D1117; --c-surface: #151B23;
+  --c-text: #E8EDF3; --c-muted: #93A0AE; --c-border: #262F3B;
+}
+
+/* ---------- 6. Minimal Black & White — Pure focus ---------- */
+html[data-theme="minimal-bw"] {
+  --c-primary: #111111; --c-on-primary: #FFFFFF; --c-primary-soft: #F0F0F0;
+  --c-accent: #111111;
+  --c-bg: #FFFFFF; --c-surface: #FAFAFA;
+  --c-text: #111111; --c-muted: #666666; --c-border: #E6E6E6;
+}
+html.dark[data-theme="minimal-bw"] {
+  --c-primary: #FFFFFF; --c-on-primary: #111111; --c-primary-soft: #1F1F1F;
+  --c-accent: #FFFFFF;
+  --c-bg: #0A0A0A; --c-surface: #141414;
+  --c-text: #F2F2F2; --c-muted: #9A9A9A; --c-border: #262626;
+}
+
+/* ===================== Base styles ===================== */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+body {
+  @apply bg-base text-ink font-body antialiased;
+  transition: background-color .25s ease, color .25s ease;
+}
+::selection { background: var(--c-accent); color: var(--c-on-primary); }
+a, button { @apply outline-none; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--c-accent); outline-offset: 3px; border-radius: 4px;
+}
+
+/* Fonts — change the two variables below (and the <link> in layout.tsx) to swap fonts */
+:root {
+  --font-display: 'Sora';
+  --font-body: 'Manrope';
+}
